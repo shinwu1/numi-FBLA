@@ -111,7 +111,12 @@ struct GoalsView: View {
                     Spacer()
                     
                     Button {
-                        print("Home tapped") // Replace with navigation
+                        
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: ContentView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "house.fill")
@@ -124,6 +129,7 @@ struct GoalsView: View {
                                 .foregroundColor(.gray)
                         }
                     }
+
                     
                     Spacer()
                     

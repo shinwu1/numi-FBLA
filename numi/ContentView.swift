@@ -198,7 +198,12 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Goals tapped") // Replace with navigation
+                       
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: GoalsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "target")
@@ -211,6 +216,8 @@ struct ContentView: View {
                                 .foregroundColor(.gray)
                         }
                     }
+
+
                     
                     Spacer()
                     
