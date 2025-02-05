@@ -62,7 +62,7 @@ struct ContentView: View {
                 
                 ProgressBar(currentValue: currentSpending, maxValue: totalBudget)
                     .frame(height: 15)
-                    .padding(.horizontal, 40)
+                    .padding(.horizontal, 30)
                     .padding(.top, 10)
                 
                 HStack {
@@ -179,7 +179,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Plus button tapped") // Replace with action! this is so exciting
+                        print("Plus button tapped") // Replace with action!
                     } label: {
                         ZStack {
                             Circle()
@@ -237,8 +237,7 @@ struct ContentView: View {
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -3)
                 .padding(.horizontal, 20)
             }
-            .ignoresSafeArea(edges: .bottom) // Ensures it sticks to the bottom
-
+            .ignoresSafeArea(edges: .bottom)
         }
         .ignoresSafeArea(edges: .bottom)
     }
