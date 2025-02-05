@@ -54,7 +54,7 @@ struct GoalsView: View {
                     .overlay(
                         VStack(alignment: .leading) {
                             HStack {
-                                Text("Fitlers")
+                                Text("Filters")
                                     .font(.custom("OpenSauce-Regular", size: 20))
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)

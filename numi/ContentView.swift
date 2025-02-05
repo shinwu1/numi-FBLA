@@ -197,8 +197,7 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Button {
-                       
+                    Button { // STOP IT IM SCARED
                         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                            let window = scene.windows.first {
                             window.rootViewController = UIHostingController(rootView: GoalsView())
