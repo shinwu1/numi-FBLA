@@ -198,8 +198,12 @@ struct ContentView: View {
                     Spacer()
                     
 <<<<<<< HEAD
+<<<<<<< HEAD
                     Button {
                        
+=======
+                    Button { // STOP IT IM SCARED
+>>>>>>> main
 =======
                     Button { // STOP IT IM SCARED
 >>>>>>> main
