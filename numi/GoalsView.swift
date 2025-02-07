@@ -134,7 +134,11 @@ struct GoalsView: View {
                     Spacer()
                     
                     Button {
-                        print("Budget tapped") // Replace with navigation
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: AddTransactionsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "banknote.fill")
@@ -151,7 +155,11 @@ struct GoalsView: View {
                     Spacer()
                     
                     Button {
-                        print("Plus button tapped") // Replace with action
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: AddTransactionsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         ZStack {
                             Circle()
@@ -170,7 +178,11 @@ struct GoalsView: View {
                     Spacer()
                     
                     Button {
-                        print("Goals tapped") // Replace with navigation
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: GoalsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "target")
@@ -187,7 +199,11 @@ struct GoalsView: View {
                     Spacer()
                     
                     Button {
-                        print("Friends tapped") // Replace with navigation
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: FriendsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "person.2.fill")

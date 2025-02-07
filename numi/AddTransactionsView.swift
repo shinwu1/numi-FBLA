@@ -147,7 +147,11 @@ struct AddTransactionsView: View {
                     Spacer()
                     
                     Button {
-                        print("Home tapped") 
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: ContentView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "house.fill")
