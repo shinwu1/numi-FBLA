@@ -92,14 +92,46 @@ struct FriendsView: View {
                 HStack {
                     Spacer()
                     
-                    navButton(icon: "house.fill", label: "Home")
-                    Spacer()
+                    Button {
+                        print("Home tapped") // Replace with navigation
+                    } label: {
+                        VStack {
+                            Image(systemName: "house.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.gray)
+                            Text("Home")
+                                .font(.custom("OpenSauce-Regular", size: 12))
+                                .foregroundColor(.gray)
+                        }
+                    }
                     
-                    navButton(icon: "banknote.fill", label: "Budget")
                     Spacer()
                     
                     Button {
-                        print("Plus button tapped") // Replace with action
+                        print("Budget tapped") // Replace with navigation
+                    } label: {
+                        VStack {
+                            Image(systemName: "banknote.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.gray)
+                            Text("Budget")
+                                .font(.custom("OpenSauce-Regular", size: 12))
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: AddTransactionsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         ZStack {
                             Circle()
@@ -117,19 +149,58 @@ struct FriendsView: View {
                     
                     Spacer()
                     
-                    navButton(icon: "target", label: "Goals")
+
+
+                    Button { // STOP IT IM SCARED
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: GoalsView())
+                            window.makeKeyAndVisible()
+                        }
+                    } label: {
+                        VStack {
+                            Image(systemName: "target")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.gray)
+                            Text("Goals")
+                                .font(.custom("OpenSauce-Regular", size: 12))
+                                .foregroundColor(.gray)
+                        }
+                    }
+
+
+                    
                     Spacer()
                     
-                    navButton(icon: "person.2.fill", label: "Friends")
+                    Button { // STOP IT IM SCARED
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: FriendsView())
+                            window.makeKeyAndVisible()
+                        }
+                    } label: {
+                        VStack {
+                            Image(systemName: "person.2.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(.gray)
+                            Text("Friends")
+                                .font(.custom("OpenSauce-Regular", size: 12))
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    
                     Spacer()
                 }
                 .frame(height: 80)
                 .background(Color.white)
                 .clipShape(Rectangle())
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -3)
-                .padding(.horizontal, 5)
             }
-            .ignoresSafeArea(edges: .bottom) // Ensures it truly sticks to the bottom
+            .ignoresSafeArea(edges: .bottom)
         }
     }
     
@@ -138,6 +209,7 @@ struct FriendsView: View {
         formatter.dateStyle = .long
         return formatter.string(from: Date())
     }
+    
     
     func navButton(icon: String, label: String) -> some View {
         Button {

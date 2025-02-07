@@ -179,7 +179,11 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        print("Plus button tapped") // Replace with action!
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: AddTransactionsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         ZStack {
                             Circle()
@@ -197,16 +201,9 @@ struct ContentView: View {
                     
                     Spacer()
                     
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    Button {
-                       
-=======
+
+
                     Button { // STOP IT IM SCARED
->>>>>>> main
-=======
-                    Button { // STOP IT IM SCARED
->>>>>>> main
                         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                            let window = scene.windows.first {
                             window.rootViewController = UIHostingController(rootView: GoalsView())
@@ -229,8 +226,12 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    Button {
-                        print("Friends tapped") // Replace with navigation
+                    Button { // STOP IT IM SCARED
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                           let window = scene.windows.first {
+                            window.rootViewController = UIHostingController(rootView: FriendsView())
+                            window.makeKeyAndVisible()
+                        }
                     } label: {
                         VStack {
                             Image(systemName: "person.2.fill")
@@ -251,7 +252,7 @@ struct ContentView: View {
                 .clipShape(Rectangle())
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -3)
                 .padding(.horizontal, 20)
-            }
+            } 
             .ignoresSafeArea(edges: .bottom)
         }
         .ignoresSafeArea(edges: .bottom)
